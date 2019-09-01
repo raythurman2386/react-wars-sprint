@@ -3,20 +3,27 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 // Import components
+import CharacterList from './components/CharacterList'
 
 // Main styles
 import './App.css'
 
 const App = () => {
+  // state hook for the data
   const [data, setData] = useState({})
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
+
+  // effect hook to grab the data
   useEffect(() => {
     axios
-      .get('http https://swapi.co/api/people/')
+      .get('http https://swapi.co/api/people/1')
+      // do something with data
       .then(res => console.log(res))
+      // do something with error
       .catch(err => console.log(err))
-  })
+    // sync the array to what data
+  }, [])
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -24,6 +31,7 @@ const App = () => {
   return (
     <div className='App'>
       <h1 className='Header'>React Wars</h1>
+      <CharacterList />
     </div>
   )
 }
