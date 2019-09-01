@@ -1,16 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
 
 // Component
 import Character from './Character'
 
 const CharacterList = ({ list }) => {
   return (
-    <div>
+    <StyledDiv>
       {list.map((char, index) => (
         <Character key={index} data={char} />
       ))}
-    </div>
+    </StyledDiv>
   )
 }
 
 export default CharacterList
+
+const StyledDiv = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1120px;
+  margin: auto;
+`
