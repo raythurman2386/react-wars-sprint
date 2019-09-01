@@ -17,16 +17,21 @@ const App = () => {
   // effect hook to grab the data
   useEffect(() => {
     axios
-      .get('http https://swapi.co/api/people/1')
-      // do something with data
-      .then(res => console.log(res))
-      // do something with error
-      .catch(err => console.log(err))
+      // grab data from api
+      .get(`https://swapi.co/api/people`)
+
+      // do something with that data
+      .then(res => setData(res.data.results))
+
+      // do something with the error
+      .catch(err => console.log(err.response))
     // sync the array to what data
   }, [])
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
+
+  console.log(data)
 
   return (
     <div className='App'>
