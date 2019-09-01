@@ -3,11 +3,12 @@ import React from 'react'
 // Component
 import Character from './Character'
 
-const CharacterList = () => {
+const CharacterList = ({ list }) => {
   return (
     <div>
-      <h1>Test</h1>
-      <Character />
+      {list.map((char, index) => (
+        <Character key={index} data={char} />
+      ))}
     </div>
   )
 }

@@ -10,7 +10,7 @@ import './App.css'
 
 const App = () => {
   // state hook for the data
-  const [data, setData] = useState({})
+  const [data, setData] = useState([])
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -36,7 +36,7 @@ const App = () => {
   return (
     <div className='App'>
       <h1 className='Header'>React Wars</h1>
-      <CharacterList />
+      <CharacterList list={data} />
     </div>
   )
 }
