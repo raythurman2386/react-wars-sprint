@@ -9,6 +9,7 @@ import Character from './Character'
 const CharacterList = () => {
   // state hook for the data
   const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
@@ -20,21 +21,34 @@ const CharacterList = () => {
 
       // do something with that data
       .then(res => setData(res.data.results))
+      .then(
+        setTimeout(() => {
+          setLoading(false)
+        }, 1000),
+      )
 
       // do something with the error
       .catch(err => console.log(err.response))
     // sync the array to what data
   }, [])
 
-  return (
-    <StyledDiv>
-      {data.map((char, index) => (
-        <Link style={LinkStyle} to={`/${index + 1}`}>
-          <Character key={index} data={char} />
-        </Link>
-      ))}
-    </StyledDiv>
-  )
+  if (loading) {
+    return (
+      <StyledDiv>
+        <h1>Loading . . .</h1>
+      </StyledDiv>
+    )
+  } else {
+    return (
+      <StyledDiv>
+        {data.map((char, index) => (
+          <Link style={LinkStyle} to={`/${index + 1}`}>
+            <Character key={index} data={char} />
+          </Link>
+        ))}
+      </StyledDiv>
+    )
+  }
 }
 
 export default CharacterList
