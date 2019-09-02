@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import Loader from 'react-loader'
 import { Link } from 'react-router-dom'
 
 // Component
@@ -37,7 +38,27 @@ const CharacterList = () => {
   if (loading) {
     return (
       <StyledDiv>
-        <h1>Loading . . .</h1>
+        <Loader
+          loaded={false}
+          lines={13}
+          length={20}
+          width={10}
+          radius={30}
+          corners={1}
+          rotate={0}
+          direction={1}
+          color='#000'
+          speed={1}
+          trail={60}
+          shadow={false}
+          hwaccel={false}
+          className='spinner'
+          zIndex={2e9}
+          top='50%'
+          left='50%'
+          scale={1.0}
+          loadedClassName='loadedContent'
+        />
       </StyledDiv>
     )
   } else {
