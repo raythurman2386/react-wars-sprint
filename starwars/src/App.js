@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 // router components
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
@@ -18,8 +19,8 @@ const App = () => {
   return (
     <Router>
       <div className='App'>
-        <Link to='/'>
-          <h1 className='Header'>React Wars</h1>
+        <Link style={{ textDecoration: 'none' }} to='/'>
+          <StyledHeader className='Header'>React Wars</StyledHeader>
         </Link>
         <Switch>
           <Route exact path='/' component={CharacterList} />
@@ -31,3 +32,11 @@ const App = () => {
 }
 
 export default App
+
+const StyledHeader = styled.h1`
+  color: #443e3e;
+  text-shadow: 1px 1px 10px #fff;
+  :hover {
+    text-decoration: underline;
+  }
+`
