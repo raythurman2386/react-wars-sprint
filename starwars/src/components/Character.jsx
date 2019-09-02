@@ -5,7 +5,7 @@ const Character = props => {
   return (
     <StyledDiv>
       <h2>{props.data.name}</h2>
-      <p>{props.data.birth_year}</p>
+      <p>Birth: {props.data.birth_year}</p>
     </StyledDiv>
   )
 }

@@ -21,11 +21,12 @@ const CharacterDetails = ({ match }) => {
     // sync the array to what data
   }, [])
 
-  console.log(character.films)
+  console.log(character)
 
   return (
     <Wrapper>
       <h1>Name: {character.name}</h1>
+      <p>Gender: {character.gender}</p>
       <p>Eyes: {character.eye_color}</p>
       <p>Birth Year: {character.birth_year}</p>
       <p>Hair: {character.hair_color}</p>

@@ -21,6 +21,8 @@ const CharacterList = () => {
 
       // do something with that data
       .then(res => setData(res.data.results))
+
+      // adding a basic loading state
       .then(
         setTimeout(() => {
           setLoading(false)
