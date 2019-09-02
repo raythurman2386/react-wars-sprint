@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Character = props => {
-  console.log(props)
+  // console.log(props)
   return (
     <StyledDiv>
       <h2>{props.data.name}</h2>
