@@ -26,8 +26,6 @@ const App = () => {
           <Route exact path='/' component={CharacterList} />
           <Route path='/details/:id' component={CharacterDetails} />
         </Switch>
-        {/* <CharacterList list={data} />
-        <CharacterDetails />*/}
       </div>
     </Router>
   )
