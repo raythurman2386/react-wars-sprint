@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 
+// router components
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
 // Import components
 import CharacterList from './components/CharacterList'
 import CharacterDetails from './components/CharacterDetails'
