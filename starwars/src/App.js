@@ -24,7 +24,7 @@ const App = () => {
         </Link>
         <Switch>
           <Route exact path='/' component={CharacterList} />
-          <Route path='/details' component={CharacterDetails} />
+          <Route path='/details/:id' component={CharacterDetails} />
         </Switch>
         {/* <CharacterList list={data} />
         <CharacterDetails />*/}

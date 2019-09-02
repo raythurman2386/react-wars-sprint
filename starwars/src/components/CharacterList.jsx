@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // Component
 import Character from './Character'
@@ -25,12 +26,12 @@ const CharacterList = () => {
     // sync the array to what data
   }, [])
 
-  console.log(data)
-
   return (
     <StyledDiv>
       {data.map((char, index) => (
-        <Character key={index} data={char} />
+        <Link to={`/details/${index + 1}`}>
+          <Character key={index + 1} data={char} />
+        </Link>
       ))}
     </StyledDiv>
   )

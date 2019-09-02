@@ -1,17 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 const Character = props => {
-  // console.log(props)
-
   return (
-    <Link to='/details'>
-      <StyledDiv>
-        <h2>{props.data.name}</h2>
-        <p>{props.data.birth_year}</p>
-      </StyledDiv>
-    </Link>
+    <StyledDiv>
+      <h2>{props.data.name}</h2>
+      <p>{props.data.birth_year}</p>
+    </StyledDiv>
   )
 }
 
@@ -26,7 +21,8 @@ const StyledDiv = styled.div`
   height: 200px;
   margin: 0 auto 20px;
   border: 1px solid black;
-  background-color: white;
+  background-color: #333;
+  color: white;
   box-shadow: 0 0 25px black;
 
   :hover {
