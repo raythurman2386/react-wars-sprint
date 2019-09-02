@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const CharacterDetails = ({ match }) => {
   // state hook for the data
   const [character, setCharacter] = useState({})
+  const [films, setFilms] = useState([])
 
   // effect hook to grab the data
   useEffect(() => {
@@ -20,18 +21,26 @@ const CharacterDetails = ({ match }) => {
     // sync the array to what data
   }, [])
 
-  console.log(character, 'character')
-
   return (
-    <div>
+    <Wrapper>
       <h1>Name: {character.name}</h1>
-      <p>Birth Year: {character.birth_year}</p>
       <p>Eyes: {character.eye_color}</p>
+      <p>Birth Year: {character.birth_year}</p>
       <p>Hair: {character.hair_color}</p>
       <p>Mass: {character.mass}</p>
       <p>Height: {character.height}</p>
-    </div>
+    </Wrapper>
   )
 }
 
 export default CharacterDetails
+
+const Wrapper = styled.div`
+  color: white;
+  border: 1px solid black;
+  background: #333;
+  width: 800px;
+  margin: auto;
+  box-shadow: 0 0 40px white;
+  height: 60vh;
+`
