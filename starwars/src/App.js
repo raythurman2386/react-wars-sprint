@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 // router components
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'

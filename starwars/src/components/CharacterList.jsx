@@ -29,8 +29,8 @@ const CharacterList = () => {
   return (
     <StyledDiv>
       {data.map((char, index) => (
-        <Link to={`/details/${index + 1}`}>
-          <Character key={index + 1} data={char} />
+        <Link style={LinkStyle} to={`/details/${index + 1}`}>
+          <Character key={index} data={char} />
         </Link>
       ))}
     </StyledDiv>
@@ -38,6 +38,10 @@ const CharacterList = () => {
 }
 
 export default CharacterList
+
+const LinkStyle = {
+  textDecoration: 'none',
+}
 
 const StyledDiv = styled.div`
   display: flex;

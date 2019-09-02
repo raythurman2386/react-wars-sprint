@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const CharacterDetails = ({ match }) => {
   // state hook for the data
   const [character, setCharacter] = useState({})
-  const [films, setFilms] = useState([])
+  // const [films, setFilms] = useState([])
 
   // effect hook to grab the data
   useEffect(() => {
@@ -39,7 +39,8 @@ const Wrapper = styled.div`
   color: white;
   border: 1px solid black;
   background: #333;
-  width: 800px;
+  max-width: 800px;
+  width: 98%;
   margin: auto;
   box-shadow: 0 0 40px white;
   height: 60vh;
