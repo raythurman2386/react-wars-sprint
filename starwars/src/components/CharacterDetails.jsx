@@ -21,6 +21,8 @@ const CharacterDetails = ({ match }) => {
     // sync the array to what data
   }, [])
 
+  console.log(character.films)
+
   return (
     <Wrapper>
       <h1>Name: {character.name}</h1>
@@ -29,6 +31,11 @@ const CharacterDetails = ({ match }) => {
       <p>Hair: {character.hair_color}</p>
       <p>Mass: {character.mass}</p>
       <p>Height: {character.height}</p>
+      <h2>
+        <StyledA href={character.url} target='__blank'>
+          More Info
+        </StyledA>
+      </h2>
     </Wrapper>
   )
 }
@@ -44,4 +51,12 @@ const Wrapper = styled.div`
   margin: auto;
   box-shadow: 0 0 40px white;
   height: 60vh;
+`
+
+const StyledA = styled.a`
+  color: red;
+  text-decoration: none;
+  :hover {
+    text-decoration: underline;
+  }
 `
