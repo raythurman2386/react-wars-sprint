@@ -29,7 +29,7 @@ const CharacterList = () => {
   return (
     <StyledDiv>
       {data.map((char, index) => (
-        <Link style={LinkStyle} to={`/details/${index + 1}`}>
+        <Link style={LinkStyle} to={`/${index + 1}`}>
           <Character key={index} data={char} />
         </Link>
       ))}

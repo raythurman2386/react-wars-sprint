@@ -23,7 +23,7 @@ const App = () => {
         </Link>
         <Switch>
           <Route exact path='/' component={CharacterList} />
-          <Route path='/details/:id' component={CharacterDetails} />
+          <Route path='/:id' component={CharacterDetails} />
         </Switch>
       </div>
     </Router>
