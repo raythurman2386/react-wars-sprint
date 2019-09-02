@@ -3,7 +3,6 @@ import axios from 'axios'
 import styled from 'styled-components'
 
 const CharacterDetails = ({ match }) => {
-  console.log(match)
   // state hook for the data
   const [character, setCharacter] = useState({})
 
@@ -21,11 +20,16 @@ const CharacterDetails = ({ match }) => {
     // sync the array to what data
   }, [])
 
-  // console.log(character, 'character')
+  console.log(character, 'character')
 
   return (
     <div>
-      <h2>{character.name}</h2>
+      <h1>Name: {character.name}</h1>
+      <p>Birth Year: {character.birth_year}</p>
+      <p>Eyes: {character.eye_color}</p>
+      <p>Hair: {character.hair_color}</p>
+      <p>Mass: {character.mass}</p>
+      <p>Height: {character.height}</p>
     </div>
   )
 }
