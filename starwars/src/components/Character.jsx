@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Character = props => {
   // console.log(props)
+
   return (
-    <StyledDiv>
-      <h2>{props.data.name}</h2>
-      <p>{props.data.birth_year}</p>
-    </StyledDiv>
+    <Link to='/details'>
+      <StyledDiv>
+        <h2>{props.data.name}</h2>
+        <p>{props.data.birth_year}</p>
+      </StyledDiv>
+    </Link>
   )
 }
 
