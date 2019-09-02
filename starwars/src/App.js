@@ -8,9 +8,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import CharacterList from './components/CharacterList'
 import CharacterDetails from './components/CharacterDetails'
 
-// Main styles
-import './App.css'
-
 const App = () => {
   // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
@@ -18,7 +15,7 @@ const App = () => {
 
   return (
     <Router>
-      <div className='App'>
+      <StyledApp>
         <Link style={{ textDecoration: 'none' }} to='/'>
           <StyledHeader className='Header'>React Wars</StyledHeader>
         </Link>
@@ -26,12 +23,16 @@ const App = () => {
           <Route exact path='/' component={CharacterList} />
           <Route path='/:id' component={CharacterDetails} />
         </Switch>
-      </div>
+      </StyledApp>
     </Router>
   )
 }
 
 export default App
+
+const StyledApp = styled.div`
+  text-align: center;
+`
 
 const StyledHeader = styled.h1`
   color: #443e3e;
