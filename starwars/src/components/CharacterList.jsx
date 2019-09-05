@@ -21,14 +21,10 @@ const CharacterList = () => {
       .get(`https://swapi.co/api/people`)
 
       // do something with that data
-      .then(res => setData(res.data.results))
-
-      // adding a basic loading state
-      .then(
-        setTimeout(() => {
-          setLoading(false)
-        }, 1000),
-      )
+      .then(res => {
+        setLoading(false)
+        setData(res.data.results)
+      })
 
       // do something with the error
       .catch(err => console.log(err.response))
@@ -61,17 +57,17 @@ const CharacterList = () => {
         />
       </StyledDiv>
     )
-  } else {
-    return (
-      <StyledDiv>
-        {data.map((char, index) => (
-          <Link style={LinkStyle} to={`/${index + 1}`}>
-            <Character key={index} data={char} />
-          </Link>
-        ))}
-      </StyledDiv>
-    )
   }
+  return (
+    <StyledDiv>
+      {data.map((char, index) => (
+        <Link style={LinkStyle} to={`/${index + 1}`}>
+          <Character key={index} data={char} />
+        </Link>
+      ))}
+    </StyledDiv>
+  )
+
 }
 
 export default CharacterList

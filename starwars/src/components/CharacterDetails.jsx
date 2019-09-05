@@ -42,6 +42,7 @@ const Wrapper = styled.div`
   color: white;
   border: 1px solid black;
   background: #333;
+  opacity: 0.8;
   max-width: 800px;
   width: 98%;
   margin: auto;

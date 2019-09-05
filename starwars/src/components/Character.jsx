@@ -23,6 +23,7 @@ const StyledDiv = styled.div`
   border: 1px solid black;
   border-radius: 8px;
   background-color: #333;
+  opacity: 0.8;
   color: white;
   box-shadow: 0 0 25px black;
 
