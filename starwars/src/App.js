@@ -1,19 +1,41 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
 
-const App = () => {
-  // Try to think through what state you'll need for this app before starting. Then build out
-  // the state properties here.
+// router components
+import { Switch, Route, Link } from 'react-router-dom'
 
-  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a 
+// Import components
+import CharacterList from './components/CharacterList'
+import CharacterDetails from './components/CharacterDetails'
+
+const App = (props) => {
+  // Fetch characters from the star wars api in an effect hook. Remember, anytime you have a
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
-
+  console.log(props)
   return (
-    <div className="App">
-      <h1 className="Header">React Wars</h1>
-    </div>
-  );
+    <StyledApp>
+      <Link style={{ textDecoration: 'none' }} to='/'>
+        <StyledHeader className='Header'>React Wars</StyledHeader>
+      </Link>
+      <Switch>
+        <Route exact path='/' component={CharacterList} />
+        <Route path='/:id' component={CharacterDetails} />
+      </Switch>
+    </StyledApp>
+  )
 }
 
-export default App;
+export default App
+
+const StyledApp = styled.div`
+  text-align: center;
+`
+
+const StyledHeader = styled.h1`
+  color: #443e3e;
+  text-shadow: 1px 1px 10px #fff;
+  :hover {
+    text-decoration: underline;
+  }
+`
